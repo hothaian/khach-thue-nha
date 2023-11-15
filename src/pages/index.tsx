@@ -13,6 +13,7 @@ const HomePage: React.FunctionComponent = () => {
   const [users, setUsers] = useState<User[]>([]);
   const usersCollection = collection(firestore, "user-info");
   const { Item } = List;
+  
 
   useEffect(() => {
     // Retrieve data from Firestore and listen for updates
@@ -28,7 +29,7 @@ const HomePage: React.FunctionComponent = () => {
           userName: doc.data().userName,
           birthdate: doc.data().birthdate,
           birthplace: doc.data().birthplace,
-          nameOption: doc.data().nameOption,
+          houseName: doc.data().houseName,
           idProvideDate: doc.data().idProvideDate,
         });
       });
